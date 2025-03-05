@@ -77,7 +77,7 @@ Studio Rental App is a modern web application built with Next.js for the fronten
 To build and deploy the frontend:
 ```sh
 npm run build
-npm run start
+npm run dev
 ```
 
 ### Sanity Studio
@@ -95,5 +95,5 @@ This project is licensed under the MIT License.
 ---
 
 ### Author
-[Your Name] - [yourwebsite.com]
+[Brian Belaj] - [https://brianbelaj.netlify.app/]
 
