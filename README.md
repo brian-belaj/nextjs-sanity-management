@@ -45,7 +45,7 @@ Studio Rental App is a modern web application built with Next.js for the fronten
 ### Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/studio-rental-app.git
+   git clone https://github.com/brian-belaj/studio-rental-app.git
    cd studio-rental-app
    ```
 2. Install dependencies:
