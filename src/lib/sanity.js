@@ -3,11 +3,11 @@ import imageUrlBuilder from "@sanity/image-url";
 
 // Configura il client Sanity
 const client = createClient({
-  projectId: "3mvzzclb", 
-  dataset: "production",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, 
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: "2023-01-01",
-  token: 'skaEovujuIzqbg4uS51DoaXviYLW7B2oJbX0PqBQhYHy8hWNlWgVQ1IC4aDGvKunfSyJ4V3obM01PlNZQtoHwWUN4y6srXnGUMkrUf1TPxGJ1DOW4QXDoUUPctRPibQ9RsT3VjXaDVCYLSl0tgwizLP4eVi5A575aOMKRSXcXv4EaL1CTFBG',
-  useCdn: false,
+  token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
+  useCdn: true,
 });
 
 // Funzione per generare URL delle immagini

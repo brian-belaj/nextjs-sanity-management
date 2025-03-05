@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Studio Rental App
 
-## Getting Started
+## Overview
+Studio Rental App is a modern web application built with Next.js for the frontend and Sanity.io as a headless CMS for managing content. The project provides an intuitive platform for users to explore and book rental spaces.
 
-First, run the development server:
+## Features
+- **Next.js Frontend**: Fast, server-rendered pages for a smooth user experience.
+- **Sanity.io Backend**: Schema-based content management for rooms, bookings, and user reviews.
+- **Dynamic Routing**: Room details and booking pages are generated dynamically.
+- **Reusable Components**: Modular UI components for better maintainability.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+- **Frontend**: Next.js, React, CSS Modules
+- **Backend**: Sanity.io (Headless CMS)
+- **Styling**: Tailwind
+- **Linting & Formatting**: ESLint, Prettier
+
+## Project Structure
+```
+.
+├── src
+│   ├── app
+│   │   ├── home (Homepage components)
+│   │   ├── rooms (Rooms listing and details pages)
+│   │   ├── layout.js (Global layout file)
+│   │   ├── globals.css (Global styles)
+│   ├── components (Reusable UI components like Navbar, Footer, etc.)
+│   ├── lib
+│   │   └── sanity.js (Sanity API integration)
+├── public (Static assets)
+├── studio-rental-app (Sanity CMS setup)
+│   ├── schemaTypes (Sanity schemas for rooms, bookings, etc.)
+│   ├── sanity.config.ts (Sanity project configuration)
+│   ├── sanity.cli.ts (Sanity CLI configuration)
+├── next.config.mjs (Next.js configuration)
+├── package.json (Project dependencies)
+└── README.md (Project documentation)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+### Prerequisites
+- Node.js (>= 16)
+- npm or yarn
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/studio-rental-app.git
+   cd studio-rental-app
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Set up environment variables:
+   - Create a `.env.local` file in the root directory
+   - Add required environment variables such as:
+     ```sh
+     NEXT_PUBLIC_SANITY_PROJECT_ID=your_sanity_project_id
+     NEXT_PUBLIC_SANITY_DATASET=production
+     ```
+4. Run the development server:
+   ```sh
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. Run the Sanity Studio:
+   ```sh
+   cd studio-rental-app
+   sanity start
+   ```
+   The studio will be available at `http://localhost:3333`
 
-## Learn More
+## Deployment
+### Next.js App
+To build and deploy the frontend:
+```sh
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Sanity Studio
+To deploy the Sanity Studio:
+```sh
+sanity deploy
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
+Feel free to submit issues and pull requests to improve the project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
+This project is licensed under the MIT License.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Author
+[Your Name] - [yourwebsite.com]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

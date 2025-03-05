@@ -3,7 +3,6 @@
 
 import { useState } from 'react';
 import client from '../lib/sanity';
-import { useForm, ValidationError } from "@formspree/react";
 
 const BookingForm = ({ roomId }) => {
   const [guestName, setGuestName] = useState('');
