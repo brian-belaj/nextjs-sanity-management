@@ -3,6 +3,9 @@
 ## Overview
 Studio Rental App is a modern web application built with Next.js for the frontend and Sanity.io as a headless CMS for managing content. The project provides an intuitive platform for users to explore and book rental spaces.
 
+### ⚠️ Note
+The frontend implementation is functional but not fully optimized. Future improvements will focus on performance enhancements, UI/UX refinements, and better state management.
+
 ## Features
 - **Next.js Frontend**: Fast, server-rendered pages for a smooth user experience.
 - **Sanity.io Backend**: Schema-based content management for rooms, bookings, and user reviews.
@@ -96,4 +99,3 @@ This project is licensed under the MIT License.
 
 ### Author
 [Brian Belaj] - [https://brianbelaj.netlify.app/]
-
