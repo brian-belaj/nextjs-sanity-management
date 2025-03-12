@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import HomeHeader from "./HomeHeader";
 import { urlFor } from "@/lib/sanity";
 
@@ -42,7 +43,7 @@ export default function HomeClient({ rooms }) {
   };
 
   return (
-    <main className="max-w-6xl">
+    <main className="max-w-8xl">
       <Navbar />
       <HomeHeader />
       <h2 className="text-3xl font-bold mb-6 px-4">Avaible Rooms</h2>
@@ -99,6 +100,7 @@ export default function HomeClient({ rooms }) {
           <ChevronRight size={24} />
         </button>
       </div>
+      <Footer />
     </main>
   );
 }
