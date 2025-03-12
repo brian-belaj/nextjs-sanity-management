@@ -71,13 +71,12 @@ const BookingForm = ({ roomId }) => {
           className="w-full p-3 border rounded placeholder-black"
         />
         <input
-          type="date"
-          placeholder="Check-In"
-          value={checkIn}
-          onChange={(e) => setCheckIn(e.target.value)}
-          required
-          className="w-full p-3 border rounded placeholder-black"
-        />
+    type="date"
+    value={checkIn}
+    onChange={(e) => setCheckIn(e.target.value)}
+    required
+    className="w-full p-2 border rounded mt-4"
+  />
         <input
           type="date"
           placeholder="Check-Out"
