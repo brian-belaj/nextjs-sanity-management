@@ -61,8 +61,6 @@ const Navbar = () => {
             </button>
             <Link href="/" className="block py-3 text-gray-700 text-lg">Home</Link>
             <Link href="/rooms" className="block py-3 text-gray-700 text-lg">Rooms</Link>
-            <Link href="/about" className="block py-3 text-gray-700 text-lg">About</Link>
-            <Link href="/contact" className="block py-3 text-gray-700 text-lg">Contact</Link>
           </motion.div>
         )}
       </AnimatePresence>
