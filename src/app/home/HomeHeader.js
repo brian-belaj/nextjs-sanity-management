@@ -40,17 +40,15 @@ export default function HomeHeader() {
           </button>
           <button
             className="border border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6 rounded-lg transition"
-            onClick={() =>
-              document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth" })
-            }
           >
-            Explore Rooms
+           <a href="/rooms">Explore Rooms</a>
           </button>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce"
+      >
         <span className="text-white text-sm mb-2">Scroll Down</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

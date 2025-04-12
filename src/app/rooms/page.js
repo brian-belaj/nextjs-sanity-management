@@ -25,8 +25,8 @@ export async function generateMetadata() {
   const seoData = await getSeoData("/rooms");
 
   return {
-    title: seoData?.title || "Titolo di Default",
-    description: seoData?.description || "Descrizione di Default",
+    title: seoData?.title || "Default Title",
+    description: seoData?.description || "Default Description",
     openGraph: seoData?.image ? { images: [urlFor(seoData.image).url()] } : {},
   };
 }
@@ -39,13 +39,13 @@ export default async function RoomsPage() {
       <Navbar />
       <main className="max-w-7xl mx-auto px-6 pt-20">
         <h1 className="text-5xl font-extrabold mb-12 text-center text-gray-800">
-          Camere Disponibili
+          Available Rooms
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {rooms.map((room) => (
   <Link
     key={room._id}
-    href={`/rooms/${room.slug.current}`} // <-- usa lo slug dinamico
+    href={`/rooms/${room.slug.current}`} // <-- use dynamic slug
     className="border rounded-2xl p-6 shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 block"
   >
     {room.images?.[0] && (
@@ -60,7 +60,7 @@ export default async function RoomsPage() {
     <h2 className="text-2xl font-bold mt-4 text-gray-800">{room.name}</h2>
     <p className="text-gray-600 mt-2 line-clamp-3">{room.description}</p>
     <p className="font-bold mt-4 text-lg text-gray-900">
-      {room.price} € / notte
+      {room.price} € / night
     </p>
   </Link>
 ))}
@@ -68,7 +68,7 @@ export default async function RoomsPage() {
         </div>
         <div className="mt-16">
           <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
-            Prenota la tua stanza
+            Book Your Room
           </h2>
           <div className="max-w-3xl mx-auto">
             <BookingForm />

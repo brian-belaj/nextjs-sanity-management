@@ -2,12 +2,11 @@
 import BookingForm from '../../components/BookingForm';
 
 const RoomDetails = ({ params }) => {
-  const roomId = params.id; // Supponendo che l'ID della camera sia passato come parametro
+  const roomId = params.id;
 
   return (
     <div>
-      <h1>Dettagli della Camera</h1>
-      {/* Mostra i dettagli della camera qui */}
+      <h1>Room details</h1>
       <BookingForm roomId={roomId} />
     </div>
   );

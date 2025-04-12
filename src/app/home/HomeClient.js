@@ -35,7 +35,7 @@ export default function HomeClient({ rooms }) {
         <h2 className="text-3xl font-bold mb-6 px-4">Available Rooms</h2>
 
         {/* Grid container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4" id="rooms">
           {rooms.map((room) => (
             <Link key={room._id} href={`/rooms/${room.slug.current}`} passHref>
   <div className="bg-white border rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300">
