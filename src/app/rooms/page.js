@@ -3,6 +3,7 @@ import Image from "next/image";
 import BookingForm from "../../components/BookingForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link"; 
 async function getRooms() {
   const query = `*[_type == "room"]{
     _id,
@@ -36,35 +37,45 @@ export default async function RoomsPage() {
   return (
     <>
       <Navbar />
-      <main className="max-w-6xl mx-auto px-6 pt-20">
-        <h1 className="text-4xl font-bold mb-8 text-center">Camere disponibili</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {rooms.map((room) => (
-            <div key={room._id} className="border rounded-xl p-6 shadow-xl bg-white">
-              {room.images?.[0] && (
-                <Image
-                  src={urlFor(room.images[0]).width(500).url()}
-                  alt={room.name}
-                  width={500}
-                  height={300}
-                  className="rounded-lg object-cover"
-                />
-              )}
-              <h2 className="text-2xl font-semibold mt-4 text-black">{room.name}</h2>
-              <p className="text-black mt-2">{room.description}</p>
-              <p className="font-bold mt-4 text-lg text-black">{room.price} € / notte</p>
-            </div>
-          ))}
+      <main className="max-w-7xl mx-auto px-6 pt-20">
+        <h1 className="text-5xl font-extrabold mb-12 text-center text-gray-800">
+          Camere Disponibili
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {rooms.map((room) => (
+  <Link
+    key={room._id}
+    href={`/rooms/${room.slug.current}`} // <-- usa lo slug dinamico
+    className="border rounded-2xl p-6 shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 block"
+  >
+    {room.images?.[0] && (
+      <Image
+        src={urlFor(room.images[0]).width(500).url()}
+        alt={room.name}
+        width={500}
+        height={300}
+        className="rounded-xl object-cover w-full h-64"
+      />
+    )}
+    <h2 className="text-2xl font-bold mt-4 text-gray-800">{room.name}</h2>
+    <p className="text-gray-600 mt-2 line-clamp-3">{room.description}</p>
+    <p className="font-bold mt-4 text-lg text-gray-900">
+      {room.price} € / notte
+    </p>
+  </Link>
+))}
+
         </div>
-        <div className="mt-12">
-          <h2 className="text-3xl font-bold text-center mb-6">Prenota la tua stanza</h2>
-          <BookingForm />
+        <div className="mt-16">
+          <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
+            Prenota la tua stanza
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <BookingForm />
+          </div>
         </div>
-        
       </main>
-      <div className="mt-12">
-          <Footer />
-        </div>
+      <Footer />
     </>
   );
 }
