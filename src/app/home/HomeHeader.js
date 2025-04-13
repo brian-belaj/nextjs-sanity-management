@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import imageHero from "/public/img/hero.webp";
 
 export default function HomeHeader() {
@@ -39,9 +40,8 @@ export default function HomeHeader() {
             Book Your Stay
           </button>
           <button
-            className="border border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6 rounded-lg transition"
-          >
-           <a href="/rooms">Explore Rooms</a>
+            className="border border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6 rounded-lg transition">
+           <Link href="/rooms"> Explore Rooms</Link>
           </button>
         </div>
       </div>

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// Funzione per ottenere i dettagli della stanza dal CMS
 async function getRoomDetails(slug) {
   const query = `*[_type == "room" && slug.current == $slug][0]{
     _id,

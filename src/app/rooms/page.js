@@ -3,7 +3,7 @@ import Image from "next/image";
 import BookingForm from "../../components/BookingForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Link from "next/link"; 
+import Link from "next/link";
 async function getRooms() {
   const query = `*[_type == "room"]{
     _id,
@@ -42,29 +42,32 @@ export default async function RoomsPage() {
           Available Rooms
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {rooms.map((room) => (
-  <Link
-    key={room._id}
-    href={`/rooms/${room.slug.current}`} // <-- use dynamic slug
-    className="border rounded-2xl p-6 shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 block"
-  >
-    {room.images?.[0] && (
-      <Image
-        src={urlFor(room.images[0]).width(500).url()}
-        alt={room.name}
-        width={500}
-        height={300}
-        className="rounded-xl object-cover w-full h-64"
-      />
-    )}
-    <h2 className="text-2xl font-bold mt-4 text-gray-800">{room.name}</h2>
-    <p className="text-gray-600 mt-2 line-clamp-3">{room.description}</p>
-    <p className="font-bold mt-4 text-lg text-gray-900">
-      {room.price} € / night
-    </p>
-  </Link>
-))}
-
+          {rooms.map((room) => (
+            <Link
+              key={room._id}
+              href={`/rooms/${room.slug.current}`} // <-- use dynamic slug
+              className="border rounded-2xl p-6 shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 block"
+            >
+              {room.images?.[0] && (
+                <Image
+                  src={urlFor(room.images[0]).width(500).url()}
+                  alt={room.name}
+                  width={500}
+                  height={300}
+                  className="rounded-xl object-cover w-full h-64"
+                />
+              )}
+              <h2 className="text-2xl font-bold mt-4 text-gray-800">
+                {room.name}
+              </h2>
+              <p className="text-gray-600 mt-2 line-clamp-3">
+                {room.description}
+              </p>
+              <p className="font-bold mt-4 text-lg text-gray-900">
+                {room.price} € / night
+              </p>
+            </Link>
+          ))}
         </div>
         <div className="mt-16">
           <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
